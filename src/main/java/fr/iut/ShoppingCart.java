@@ -23,4 +23,8 @@ public class ShoppingCart {
             sum += entry.getKey().getPrice() * entry.getValue();
         return sum;
     }
+
+    public double getPriceWithTaxes(Country country) {
+        return getPriceWithoutTaxes() * country.getTaxToApply();
+    }
 }
