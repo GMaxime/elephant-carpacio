@@ -13,9 +13,16 @@ public class TestShoppingCart {
         final Item carrot = new Item("carrot", 2.5);
         shoppingCart.addItem(carrot, 1);
 
-        Assert.assertEquals(shoppingCart.getContent(), new HashMap<Item, Integer>() {{
+        Assert.assertEquals(new HashMap<Item, Integer>() {{
             put(carrot, 1);
-        }});
+        }}, shoppingCart.getContent());
     }
 
+    @Test
+    public void computePriceWithoutTaxes() {
+        final ShoppingCart shoppingCart = new ShoppingCart();
+        final Item carrot = new Item("carrot", 2.5);
+        shoppingCart.addItem(carrot, 1);
+        Assert.assertEquals(2.5, shoppingCart.getPriceWithoutTaxes(),0.001);
+    }
 }

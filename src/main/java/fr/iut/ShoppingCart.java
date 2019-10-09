@@ -16,4 +16,11 @@ public class ShoppingCart {
         copied.putAll(content);
         return copied;
     }
+
+    public double getPriceWithoutTaxes() {
+        double sum = 0;
+        for (Map.Entry<Item, Integer> entry : content.entrySet())
+            sum += entry.getKey().getPrice() * entry.getValue();
+        return sum;
+    }
 }

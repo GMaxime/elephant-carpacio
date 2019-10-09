@@ -25,4 +25,8 @@ public class Item {
     public int hashCode() {
         return Objects.hash(name, price);
     }
+
+    public double getPrice() {
+        return price;
+    }
 }
