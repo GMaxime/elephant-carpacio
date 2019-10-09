@@ -23,6 +23,8 @@ public class TestShoppingCart {
         final ShoppingCart shoppingCart = new ShoppingCart();
         final Item carrot = new Item("carrot", 2.5);
         shoppingCart.addItem(carrot, 1);
-        Assert.assertEquals(2.5, shoppingCart.getPriceWithoutTaxes(),0.001);
+        shoppingCart.addItem(new Item("Apple", 1), 25);
+        shoppingCart.addItem(new Item("Bananas 1Kg ", 5), 3);
+        Assert.assertEquals(42.5, shoppingCart.getPriceWithoutTaxes(),0.001);
     }
 }
